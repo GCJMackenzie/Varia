@@ -1,0 +1,8 @@
+chr	-	PH0233-C.g415	Cluster_1	0	11247	lgrey
+chr	-	PG0103-C.g50	Cluster_2	0	11040	lgrey
+chr	-	PF0487-C.g9	Cluster_3	0	8475	lgrey
+chr	-	PF0145-C.g1	Cluster_4	0	10322	lgrey
+chr	-	PH0357-C.g15	Cluster_5	0	10644	lgrey
+chr	-	PF0197-C.g31	Cluster_6	0	10656	lgrey
+chr	-	PC0054-C.g1	Cluster_7	0	11172	lgrey
+chr	-	PfIT_050037800_tag	PfIT_050037800_tag	0	250	lyellow

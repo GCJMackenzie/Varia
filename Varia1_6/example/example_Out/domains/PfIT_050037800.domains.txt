@@ -1,0 +1,112 @@
+PH0233-C.g415	232	1423	1	fill_color=blue
+
+PH0233-C.g415	1426	2179	1	fill_color=dgreen
+
+PH0233-C.g415	2206	3679	1	fill_color=dblue
+
+PH0233-C.g415	3751	4600	1	fill_color=lgreen
+
+PH0233-C.g415	5044	6151	1	fill_color=red
+
+PH0233-C.g415	6385	7507	1	fill_color=lgreen
+
+PH0233-C.g415	7579	8845	1	fill_color=dpurple
+
+PH0233-C.g415	8866	9835	1	fill_color=red
+
+PG0103-C.g50	232	1423	1	fill_color=blue
+
+PG0103-C.g50	1426	2179	1	fill_color=dgreen
+
+PG0103-C.g50	2206	3679	1	fill_color=dblue
+
+PG0103-C.g50	3751	4813	1	fill_color=lgreen
+
+PG0103-C.g50	4870	5950	1	fill_color=red
+
+PG0103-C.g50	6184	7279	1	fill_color=lgreen
+
+PG0103-C.g50	7321	8587	1	fill_color=dpurple
+
+PG0103-C.g50	8605	9583	1	fill_color=dorange
+
+PF0487-C.g9	232	1423	1	fill_color=blue
+
+PF0487-C.g9	1426	2179	1	fill_color=dgreen
+
+PF0487-C.g9	2206	3628	1	fill_color=dblue
+
+PF0487-C.g9	3682	4786	1	fill_color=lgreen
+
+PF0487-C.g9	5092	6160	1	fill_color=lgreen
+
+PF0487-C.g9	6307	7549	1	fill_color=dpurple
+
+PF0145-C.g1	232	1423	1	fill_color=blue
+
+PF0145-C.g1	1426	2179	1	fill_color=dgreen
+
+PF0145-C.g1	2206	3676	1	fill_color=dblue
+
+PF0145-C.g1	3748	4807	1	fill_color=lgreen
+
+PF0145-C.g1	4864	5932	1	fill_color=red
+
+PF0145-C.g1	6220	7348	1	fill_color=lgreen
+
+PF0145-C.g1	7390	8659	1	fill_color=dpurple
+
+PF0145-C.g1	8677	9682	1	fill_color=red
+
+PH0357-C.g15	232	1423	1	fill_color=blue
+
+PH0357-C.g15	1426	2179	1	fill_color=dgreen
+
+PH0357-C.g15	2206	3673	1	fill_color=dblue
+
+PH0357-C.g15	3745	4807	1	fill_color=lgreen
+
+PH0357-C.g15	4864	5944	1	fill_color=red
+
+PH0357-C.g15	6178	7306	1	fill_color=lgreen
+
+PH0357-C.g15	7378	8638	1	fill_color=dpurple
+
+PH0357-C.g15	8659	9622	1	fill_color=red
+
+PH0357-C.g15	9805	10642	1	fill_color=green
+
+PF0197-C.g31	232	1423	1	fill_color=blue
+
+PF0197-C.g31	1426	2179	1	fill_color=dgreen
+
+PF0197-C.g31	2206	3679	1	fill_color=dblue
+
+PF0197-C.g31	3751	4813	1	fill_color=lgreen
+
+PF0197-C.g31	4870	5950	1	fill_color=red
+
+PF0197-C.g31	6265	7387	1	fill_color=lgreen
+
+PF0197-C.g31	7459	8719	1	fill_color=dpurple
+
+PF0197-C.g31	8740	9712	1	fill_color=red
+
+PF0197-C.g31	9895	10657	1	fill_color=green
+
+PC0054-C.g1	232	1423	1	fill_color=blue
+
+PC0054-C.g1	1426	2119	1	fill_color=dgreen
+
+PC0054-C.g1	2146	3616	1	fill_color=dblue
+
+PC0054-C.g1	3688	4747	1	fill_color=lgreen
+
+PC0054-C.g1	4804	5872	1	fill_color=red
+
+PC0054-C.g1	6160	7288	1	fill_color=lgreen
+
+PC0054-C.g1	7330	8599	1	fill_color=dpurple
+
+PC0054-C.g1	8617	9622	1	fill_color=red
+

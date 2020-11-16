@@ -1,0 +1,21 @@
+NTSA	fill_color=lred
+DBLepam	fill_color=red
+DBLpam	fill_color=dred
+DBLd	fill_color=lorange
+ATSB	fill_color=orange
+DBLe	fill_color=dorange
+ATSA	fill_color=lyellow
+NTSB	fill_color=yellow
+CIDRg	fill_color=dyellow
+DBLg	fill_color=lgreen
+ATSvar	fill_color=green
+CIDRa	fill_color=dgreen
+CIDRd	fill_color=lblue
+DBLa	fill_color=blue
+DBLb	fill_color=dblue
+ATSpam	fill_color=lpurple
+CIDRb	fill_color=purple
+DBLz	fill_color=dpurple
+CIDRpam	fill_color=vdgreen
+NTSpam	fill_color=vlred
+
