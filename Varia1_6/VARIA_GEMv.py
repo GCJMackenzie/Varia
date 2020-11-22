@@ -11,13 +11,15 @@ from Bio import SeqIO
 import itertools
 from Bio.Seq import Seq
 
-Blast_DB  = "/Users/rasmusjensen/Dropbox/Databases/out.fasta"	# blast database path
-NGS = "No" 			# If NGS type input or single DBLa-Tag sequences, Yes/No input
-IDENT = 95			# Blast identity cutoff, number between 0-100 
-THRESHOLD = 66		# Threshold for when a domain is correctly determined, number between 0-100
-Cutoff = 0			# Minimum cluster size cutoff, if NGS type data, positive integer
-LIMIT = 0 			# Set Limit for the total number of reads needed in a run, typical around 100 reads, 0 if non-NGS data!
-Domain_database = "/Users/rasmusjensen/Dropbox/Databases/varDBv4_PacBio.3kb.Subdomain_v2.txt" 	# Domain database path
+print(sys.argv)
+Blast_DB  = sys.argv[1]		# blast database path
+Domain_database = sys.argv[2]   # Domain database path
+NGS = sys.argv[3] 		# If NGS type input or single DBLa-Tag sequences, Yes/No input
+IDENT = float(sys.argv[4])	# Blast identity cutoff, number between 0-100 
+THRESHOLD = float(sys.argv[5])	# Threshold for when a domain is correctly determined, number between 0-100
+Cutoff = int(sys.argv[6])			# Minimum cluster size cutoff, if NGS type data, positive integer
+LIMIT = int(sys.argv[7]) 			# Set Limit for the total number of reads needed in a run, typical around 100 reads, 0 if non-NGS data!
+
 
 #### Create xlsx file, add tabs and formats ####
 workbook = xlsxwriter.Workbook('Result_summary.xlsx')
@@ -38,7 +40,7 @@ def Clustering():														# Cluster sequences using Usearch11.0.667 program
 					record.seq = record.seq[23:-23]
 				SeqIO.write(record, seq, 'fasta')
 		seq.close()
-		os.system("/Users/rasmusjensen/Dropbox/vsearch-2.14.2-macos-x86_64/bin/vsearch -Cluster_fast "+str(fasta)+" -id 0.95 -uc Clusters.uc -Clusters ./"+str(fasta[:-6])+"/")	 # Cluster sequences with 95% identity
+		os.system("vsearch --cluster_fast "+str(fasta)+" -id 0.95 -uc Clusters.uc --clusters ./"+str(fasta[:-6])+"/")	 # Cluster sequences with 95% identity
 		os.remove(str(fasta[:-6]+"temp"))
 
 def Readfile(filename):								

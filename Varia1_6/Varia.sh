@@ -651,18 +651,169 @@ if [ "$1" = "VIP" ]
 elif [ "$1" = "GEM" ]
 	then
 	echo "Activating GEM module."
-	Blast_DB="/Users/rasmusjensen/Dropbox/Databases/out.fasta"	# blast database path
-	Domain_database="/Users/rasmusjensen/Dropbox/Databases/varDBv4_PacBio.3kb.Subdomain_v2.txt" 	# Domain database path
+	Blast_DB="$DIR/vardb/megavardb.fasta"	# blast database path
+	Domain_database="$DIR/domains/vardb_GEM_domains.txt" 	# Domain database path
 	NGS="No" # If NGS type input or single DBLa-Tag sequences, Yes/No input
 	IDENT=95	# Blast identity cutoff, number between 0-100 
 	THRESHOLD=66	# Threshold for when a domain is correctly determined, number between 0-100
 	Cutoff=0	# Minimum cluster size cutoff, if NGS type data, positive integer
 	LIMIT=0 	# Set Limit for the total number of reads needed in a run, typical around 100 reads, 0 if non-NGS data!
+	INDIR=""
+	OUTDIR=""
 
 
 	while [ -n "$2" ]; do # while loop starts
 	 
 		case "$2" in
+
+		-i)
+			shift
+			echo "planned location for input directory"
+			INDIR=$2
+
+			##Prevents other options from being mistaken as directory name, when -o is blank.
+			if echo $INDIR | grep -q '\-[ionftclh]$';
+			then
+				echo "No directory name specified."
+				exit
+			fi
+			
+			##Checks -o is not blank.
+			if [ "$INDIR" = "" ]
+			then
+				echo "No directory name specified."
+				exit
+			fi
+			CHECK=$(ls $INDIR)
+			echo $CHECK
+			if [ "$CHECK" = "" ]
+			then
+				echo "Input directory not found or Input directory is empty"
+				exit
+			fi
+			;;
+
+		-o)
+			echo "planned location for output directory"
+			shift
+			OUTDIR=$2
+
+			##Prevents other options from being mistaken as directory name, when -o is blank.
+			if echo $OUTDIR | grep -q '\-[ionftclh]$';
+			then
+				echo "No directory name specified."
+				exit
+			fi
+			
+			##Checks -o is not blank.
+			if [ "$OUTDIR" = "" ]
+			then
+				echo "No directory name specified."
+				exit
+			fi
+
+			if [ ! -d "$OUTDIR" ]
+			then
+				echo "output directory not found"
+				exit
+			fi
+			;;
+
+		-n)
+			shift
+			NGSCHECK=$2
+
+			if [ "$NGSCHECK" = "Yes" ] || [ "$NGSCHECK" = "yes" ] || [ "$NGSCHECK" = "y" ] || [ "$NGSCHECK" = "Y" ]
+			then
+				NGS="Yes"
+			elif [ "$NGSCHECK" = "No" ] || [ "$NGSCHECK" = "no" ] || [ "$NGSCHECK" = "n" ] || [ "$NGSCHECK" = "N" ]
+			then
+				NGS="No"
+			else
+				echo "option provided for -n must be Yes or No"
+				exit
+			fi
+			;;
+
+		-f) 
+			shift
+			IDENT=$2
+	 
+
+			##Checks -f is a numeric value. 
+			if ! echo $IDENT | egrep -q '^[0-9]+\.?[0-9]*$';
+			then
+				echo "Identity score must be between 0 and 100"
+				exit
+			fi
+			##Checks -f is not greater than 100. (Can't be below zero as this would require non-numeric characters, which check above prevents).
+			UPCHECK=$(echo "$IDENT > 100" | bc -l)
+			
+			if [ "$UPCHECK" = "1" ]
+			then
+				echo "Identity score out of range, keep identity score between 0 and 100"
+				exit
+			fi 
+			;;
+
+		-t) 
+			shift
+			THRESHOLD=$2
+	 
+
+			##Checks -t is a numeric value. 
+			if ! echo $THRESHOLD | egrep -q '^[0-9]+\.?[0-9]*$';
+			then
+				echo "Threshold score must be between 0 and 100"
+				exit
+			fi
+			##Checks -t is not greater than 100. (Can't be below zero as this would require non-numeric characters, which check above prevents).
+			UPCHECK=$(echo "$THRESHOLD > 100" | bc -l)
+			
+			if [ "$UPCHECK" = "1" ]
+			then
+				echo "Threshold score out of range, keep identity score between 0 and 100"
+				exit
+			fi
+			;;
+
+		-c) 
+			shift
+			Cutoff=$2
+	 
+
+			##Checks -c is a positive integer. 
+			if ! echo $Cutoff | egrep -q '^[0-9]*$';
+			then
+				echo "Cutoff score must be a positive integer."
+				exit
+			fi
+
+			if [ "$Cutoff" = "" ]
+			then
+				echo "no value entered for -c"
+				exit
+			fi
+			;;
+
+		-l) 
+			shift
+			LIMIT=$2
+	 
+
+			##Checks -l is a positive integer. 
+			if ! echo $LIMIT | egrep -q '^[0-9]*$';
+			then
+				echo "Read limit must be a positive integer."
+				exit
+			fi
+
+			if [ "$LIMIT" = "" ]
+			then
+				echo "no value entered for -l"
+				exit
+			fi
+			;;	
 
 		-h)
 			echo ""
@@ -698,7 +849,8 @@ elif [ "$1" = "GEM" ]
 	 
 		shift
 	done
-	python $DIR/VARIA_GEMv.py 
+
+	python $DIR/VARIA_GEMv.py $Blast_DB $Domain_database $NGS $IDENT $THRESHOLD $Cutoff $LIMIT
 
 ##If -v is specified, the current version of Varia is printed.
 elif [ "$1" = "-v" ]
