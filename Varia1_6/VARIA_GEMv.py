@@ -176,7 +176,7 @@ def Interpreter(Ordering,raw_list,worksheet,row,file_list):
 def main():	
 	#### Cluster all sample fasta files found ####
 	Clustering()														
-	print "CLUSTERING COMPLETE"
+	print("CLUSTERING COMPLETE")
 	sum_row = 4
 	#### Iterate across all sample folders ####
 	for path in glob.glob("./*/"):
@@ -206,7 +206,7 @@ def main():
 			worksheet.write(row-1,column,e_names,bold)
 			if column > 5:worksheet_all.write(row-1,column-4,e_names,bold)
 			column +=1
-		print path[2:-1]
+		print(path[2:-1])
 		#### Iterate across all Cluster files, performing blast and domain annotation ####
 		for Cluster in file_list:
 			column, top_hits, domain_list, lines_in = 0, [], [], Readfile(Cluster[0])
