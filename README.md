@@ -1,9 +1,27 @@
 # Varia
-Repository for Varia package, containing Varia VIP and Varia GEM
+Varia is a tool to predict var genes based on short 150-200 base pair sequences (like PCR fragments). It is composed of two module Varia VIP and Varia GEM.
 
-#Pre-requisites
+To install Varia, and first download the current version, eg.
+1. git clone https://github.com/GCJMackenzie/Varia.git
+2. Move to direcory "cd Varia/Varia1_6"
+3. Next you need to download two files with var genes data. You can obviously provide your own, see manual, but download:
+3a: download vardb_domains.txt.gz from https://github.com/ThomasDOtto/varDB/tree/master/Datasets/Varia/ into the directory domains and unzip it
+3b download mega_var.fasta.gz from https://github.com/ThomasDOtto/varDB/tree/master/Datasets/Varia/ into the directory vardb and unzip it
+4. change the attributes of executable files: chmod 755 *.sh
+5. Run the installation scrip ./Install_Varia.sh. This will install all the needed packages.
+6. Set the path as suggested in the last line of the varia installation script:
+PATH=$PATH:<...Varia/Varia1_6> export PATH
 
-Varia is run in a Linux environment. To run module 1, Varia requires the following tools be installed and be included in the user’s path:<BR>
+with Varia.sh VIP -h you should get information how to run the first module. 
+
+We tested Varia on a linux enviroment, (not Mac yet).
+
+
+
+
+#Pre-requisites 
+
+Varia is run in a Linux environment. To run module 1, Varia requires the following tools be installed and be included in the user’s path: (The installation script will try to install some of them)<BR> 
 -mcl v12-135: https://micans.org/mcl/<BR>
 -megablast + formatdb v2.2.26: https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download<BR>
 -samtools v1.7: http://samtools.sourceforge.net/<BR>
