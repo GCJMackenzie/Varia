@@ -18,7 +18,7 @@ conda install -c bioconda/label/cf201901 vsearch
 
 with Varia.sh VIP -h you should get information how to run the first module. 
 
-We tested Varia on a linux enviroment, (not Mac yet).
+We tested Varia on a linux and Mac (10.13) enviroment.
 
 
 
