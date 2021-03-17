@@ -1,9 +1,31 @@
 # Varia
-Repository for Varia package, containing Varia VIP and Varia GEM
+Varia is a tool to predict var genes based on short 150-200 base pair sequences (like PCR fragments). It is composed of two module Varia VIP and Varia GEM.
 
-#Pre-requisites
+To install Varia, and first download the current version, eg.
+1. git clone https://github.com/GCJMackenzie/Varia.git
+2. Move to direcory "cd Varia/Varia1_6"
+3. Next you need to download two files with var genes data. You can obviously provide your own, see manual, but download:<BR>
+3a: download vardb_domains.txt.gz from https://github.com/ThomasDOtto/varDB/tree/master/Datasets/Varia/ into the directory domains and unzip it<BR>
+  Run next:  cat vardb_domains.txt | perl -e 'while(<STDIN>){@ar=split(/\t/); chomp($ar[3]); $h{$ar[0]}.=$ar[3]."-"}; foreach $k (keys %h){ print "$k\t$h{$k}\n"}'  > vardb_GEM_domains.txt to generate a different version of the domains
+3b download mega_var.fasta.gz from https://github.com/ThomasDOtto/varDB/tree/master/Datasets/Varia/ into the directory vardb and unzip it
+4. change the attributes of executable files: chmod 755 *.sh
+5. Run the installation scrip ./Install_Varia.sh. This will install all the needed packages.
+6. Set the path as suggested in the last line of the varia installation script:
+PATH=$PATH:<...Varia/Varia1_6> export PATH
+7. Finally install vsearch: <BR>
+  conda install -c bioconda vsearch<BR>
+conda install -c bioconda/label/cf201901 vsearch 
 
-Varia is run in a Linux environment. To run module 1, Varia requires the following tools be installed and be included in the user’s path:<BR>
+with Varia.sh VIP -h you should get information how to run the first module. 
+
+We tested Varia on a linux and Mac (10.13) enviroment.
+
+
+
+
+#Pre-requisites 
+
+Varia is run in a Linux environment. To run module 1, Varia requires the following tools be installed and be included in the user’s path: (The installation script will try to install some of them)<BR> 
 -mcl v12-135: https://micans.org/mcl/<BR>
 -megablast + formatdb v2.2.26: https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download<BR>
 -samtools v1.7: http://samtools.sourceforge.net/<BR>

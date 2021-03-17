@@ -148,14 +148,14 @@ def Interpreter(Ordering,raw_list,worksheet,row,file_list):
 						if "CIDRa2" in domain[0] or "CIDRa3" in domain[0] or "CIDRa4" in domain[0] or "CIDRa5" in domain[0] or "CIDRa6" in domain[0] and (domains.count("CIDRa2")+domains.count("CIDRa3")+domains.count("CIDRa4")+domains.count("CIDRa5")+domains.count("CIDRa6")) > 0:
 							column = 7
 							worksheet.write(row,column+6,int(domains.count("CIDRa2")+domains.count("CIDRa3")+domains.count("CIDRa4")+domains.count("CIDRa5")+domains.count("CIDRa6")),cell_format2)
-							if float(domain[1])/(domains.count("CIDRa2")+domains.count("CIDRa3")+domains.count("CIDRa4")+domains.count("CIDRa5")+domains.count("CIDRa6")) >= (THRESHOLD/100):
+							if float(domain[1])/(domains.count("CIDRa2")+domains.count("CIDRa3")+domains.count("CIDRa4")+domains.count("CIDRa5")+domains.count("CIDRa6")) >= float(THRESHOLD)/100:
 								output = domains.count("CIDRa2")+domains.count("CIDRa3")+domains.count("CIDRa4")+domains.count("CIDRa5")+domains.count("CIDRa6")
 						else:
 							worksheet.write(row,column+6,int(output),cell_format2)
-						if (float(output)/domain_total >= (THRESHOLD/100) or domain_total == 1) and BREAK == 0:
+						if (float(output)/domain_total >= float(THRESHOLD)/100 or domain_total == 1) and BREAK == 0:
 							BREAK +=1
 							worksheet.write(row+len(file_list)+7,column+4,1,cell_format_new["Match"])
-							if float(raw[1])/domain[1] >= (THRESHOLD/100): # Write subtype
+							if float(raw[1])/domain[1] >= float(THRESHOLD)/100: # Write subtype
 								if raw[0] in excel_names[89:]:
 									if domain[0] in excel_names[75:89]:worksheet.write(row+len(file_list)+7,73+excel_names[75:89].index(domain[0]),1,cell_format2)
 									worksheet.write(row+len(file_list)+7,87+excel_names[89:].index(raw[0]),1,cell_format2)
