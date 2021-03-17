@@ -23,7 +23,7 @@ Options:
 
 	-d When this option is used, the filedump folder containing files not counted as part of the results or needed to generate plots. By default these are kept.
 	
-	-g When this optionit used, the Circos plots and domain distribution plots are not generated during Varia_VIP.
+	-g When this option is used, the Circos plots and domain distribution plots are not generated during Varia_VIP.
 	   However, The config files for Circos plots and python scripts generated to make the domain distribution plots are still created so the plots can be created manually at user discretion.
 
 	-h Prints help file for Varia_VIP including how to run and options.

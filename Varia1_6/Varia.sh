@@ -40,10 +40,11 @@ if [ "$1" = "VIP" ]
 
 		## -f provides the initial identity filter.  
 		-f) 
+			shift
 			IDENTA=$2
 	 
-				shift
-			##Checks -f is a numeric value. 
+			##Checks -f is a numeric value.
+			echo $IDENTA 
 			if ! echo $IDENTA | egrep -q '^[0-9]+\.?[0-9]*$';
 			then
 				echo "Identity score must be between 0 and 100"
@@ -62,9 +63,9 @@ if [ "$1" = "VIP" ]
 
 		## -l sets the length filter for initial blast hit. 
 		-l)
-			LENGTH=$2
-	 
 			shift
+			LENGTH=$2
+
 			##Ensures -l is a positive integer.
 			if ! echo $LENGTH | egrep -q '^[0-9]*$';
 			then
@@ -82,10 +83,11 @@ if [ "$1" = "VIP" ]
 			;;
 
 		## -c sets the identity value for pre-clustering filter.
-		-c) 
+		-c)  
+
+			shift
 			IDENTB=$2
-	 
-				shift
+	
 			##Checks -c is a positive numeric value.
 			if ! echo $IDENTB | egrep -q '^[0-9]+\.?[0-9]*$';
 			then
@@ -105,9 +107,9 @@ if [ "$1" = "VIP" ]
 
 		## -p sets the percentage of length used in the pre-clustering filter. 
 		-p)
+
+			shift
 			PERCENT=$2
-	 
-				shift
 
 			##Checks -p is a positive numeric value.
 			if ! echo $PERCENT | egrep -q '^[0-9]+\.?[0-9]*$';
