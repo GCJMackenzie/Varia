@@ -136,10 +136,12 @@ then
 			ln -s $INP vardb_domains.txt
 			echo "Creating Varia_GEM domains file"
 			cut -f 1 vardb_domains.txt | sort | uniq > seqlist.txt
+			TOTLINE=$(wc -l seqlist.txt | cut -d ' ' -f 1)
+			COUNTLINE=1
 			while read p ;
 
 				do grep -w $p vardb_domains.txt | sort -n -k 2 > tempstore.txt
-				echo $p
+				echo "Generating GEM domain file, working on Isolate: ${COUNTLINE} of ${TOTLINE}"
 				INLINE=""
 				while read q ;
 					do INPUT=$(echo -e "$q" | cut -f 4)
@@ -147,6 +149,7 @@ then
 					done<tempstore.txt
 				INLINE=$(echo $INLINE | cut -d '-' -f 2- )
 				echo "${p}\t$INLINE" >> vardb_GEM_domains.txt
+				COUNTLINE=$((COUNTLINE + 1))
 				done<seqlist.txt
 
 			rm seqlist.txt
