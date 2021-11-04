@@ -1,12 +1,15 @@
 # Varia
 
-Varia is a tool to predict the full sequences of genes from short fragments. We applied and optimised it to run on the <i>var</i> gene famil 
+Varia is a tool to predict the full sequences of genes from 150-200 base pair sequences (like PCR fragments). We applied and optimised it to run on the <i>var</i> gene familly and using DBL domains, especially the DBLa domain. It is composed of two modules Varia VIP and Varia GEM.
+
+To install Varia you can download a pre-compiled virtual machine or install it from scratch (you also need to then download the databases)
+
 ## Installation
-Varia is a tool to predict var genes based on short 150-200 base pair sequences (like PCR fragments). It is composed of two modules Varia VIP and Varia GEM.
 
-To install Varia, and download the current version:
+### Virtual machine
+Users without a bioinformatics setup can use our Linux virtual machine (https://q-r.to/ILRA_VM). You will need to install VirtualBox (https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html), set up Ubuntu x64 and mount the downloaded disc (.vdi). To install the virtual machine, please have look at 'VM.install.pdf' for further help. The username is 'bioinfo' and the password 'Glasgow2020'. The user has sudo rights. 
 
-
+### Git-hub installation
 To install Varia, and download the current version:
 
 1. git clone https://github.com/GCJMackenzie/Varia.git
@@ -15,8 +18,8 @@ Next you need to download two files with var genes data. You can obviously provi
 3. (a) download vardb_domains.txt.gz from https://github.com/ThomasDOtto/varDB/tree/master/Datasets/Varia/ into the directory domains and unzip it
 
   (b) download mega_var.fasta.gz from https://github.com/ThomasDOtto/varDB/tree/master/Datasets/Varia/ into the directory vardb and unzip it
-4. change the attributes of executable files: chmod 755 *.sh
-5. Run the installation script ./Install_Varia.sh. This will install all the needed packages.
+4. change the attributes of executable files: chmod 755 *.sh<BR>
+5. Run the installation script ./Install_Varia.sh. This will install all the needed packages.<BR>
 
   During installation you will be prompted to enter the names of the domains file and then the database file downloaded in steps 3(a) and 3(b) respectively. If using files from directories outside of Varia1_6/domains and Varia1_6/vardb respectively then full paths to files are required.
 
