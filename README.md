@@ -39,10 +39,12 @@ We tested Varia on a linux and Mac (10.13) enviroment.
 
 Varia is run in a Linux environment. To run module 1, Varia requires the following tools be installed and be included in the user’s path: (The installation script will try to install some of them)<BR> 
 -mcl v12-135: https://micans.org/mcl/<BR>
--megablast + formatdb v2.2.26: https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download<BR>
+-megablast + formatdb v2.2.26: https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download - on a ubuntu system it can be installed easily with:<BR>
+  apt install ncbi-blast+-legacy<BR>
 -samtools v1.7: http://samtools.sourceforge.net/<BR>
 -Vsearch 2.14.2 <BR>
 -circos v 0.69-6, perl v 5.022000: http://circos.ca/software/download/circos/<BR>
+  If on Ubuntu, use: apt install circos for the installation. For the VM, we had to install some perl modules (SVG.pm), which we did over CPAN - apt install circos http://circos.ca/documentation/tutorials/configuration/perl_and_modules/<BR>
 <BR>
 The script Install_Varia.sh, has been included to help check the required tools are installed. Varia has two pipelines, the var identification and prediction, Varia_VIP, and the var gene expression analysis module, (2) Varia_GEM. 
 <BR>
