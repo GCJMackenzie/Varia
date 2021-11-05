@@ -21,9 +21,9 @@ Next you need to download two files with var genes data. You can obviously provi
 4. change the attributes of executable files: chmod 755 *.sh<BR>
 5. Run the installation script ./Install_Varia.sh. This will install all the needed packages.<BR>
 
-  During installation you will be prompted to enter the names of the domains file and then the database file downloaded in steps 3(a) and 3(b) respectively. If using files from directories outside of Varia1_6/domains and Varia1_6/vardb respectively then full paths to files are required.
+   During installation you will be prompted to enter the names of the domains file and then the database file downloaded in steps 3(a) and 3(b) respectively. If using files from directories outside of Varia1_6/domains and Varia1_6/vardb respectively then full paths to files are required.
 
-  The Varia_GEM domains file: Vardb_GEM_domains.txt file is automatically generated when a new domains file is specified, this may take some time with large domain files.
+   The Varia_GEM domains file: Vardb_GEM_domains.txt file is automatically generated when a new domains file is specified, this may take some time with large domain files.
 6. Set the path as suggested in the last line of the varia installation script: PATH=$PATH:<...Varia/Varia1_6> export PATH
 7. Finally install vsearch:
 conda install -c bioconda vsearch
@@ -35,9 +35,9 @@ We tested Varia on a linux and Mac (10.13) enviroment.
 
 
 
-##Pre-requisites 
+## Pre-requisites 
 
-Varia is run in a Linux environment. To run module 1, Varia requires the following tools be installed and be included in the user’s path: (The installation script will try to install some of them)<BR> 
+Varia is run in a Linux environment. To run module 1, Varia requires the following tools be installed and be included in the user’s path: (The installation script will ask permission to try and install circos and mcl using conda if they are not found on the users path.)<BR> 
 -mcl v12-135: https://micans.org/mcl/<BR>
 -megablast + formatdb v2.2.26: https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download - on a ubuntu system it can be installed easily with:<BR>
   apt install ncbi-blast+-legacy<BR>
