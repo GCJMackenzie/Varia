@@ -852,7 +852,7 @@ elif [ "$1" = "GEM" ]
 		shift
 	done
 
-	python $DIR/VARIA_GEMv.py $Blast_DB $Domain_database $NGS $IDENT $THRESHOLD $Cutoff $LIMIT
+	python3.9 $DIR/VARIA_GEM.py $Blast_DB $Domain_database $NGS $IDENT $THRESHOLD $Cutoff $LIMIT
 
 ##If -v is specified, the current version of Varia is printed.
 elif [ "$1" = "-v" ]
