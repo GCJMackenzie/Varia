@@ -35,9 +35,9 @@ First, please install all the dependencies. Especially is the legacy version of 
 1. git clone https://github.com/GCJMackenzie/Varia.git
 2. Move to direcory "cd Varia/Varia1_6"
 Next you need to download two files with var genes data. You can obviously provide your own, see manual, but download:
-3. (a) download vardb_domains.txt.gz from https://github.com/ThomasDOtto/varDB/tree/master/Datasets/Varia/ into the directory domains and unzip it
+3. (a) download vardb_domains.txt.gz from https://github.com/ThomasDOtto/varDB/tree/master/Datasets/Varia/ into the directory <B>domains/</B> and unzip it
 
-   (b) download mega_var.fasta.gz from https://github.com/ThomasDOtto/varDB/tree/master/Datasets/Varia/ into the directory vardb and unzip it
+   (b) download mega_var.fasta.gz from https://github.com/ThomasDOtto/varDB/tree/master/Datasets/Varia/ into the directory <b>vardb/</b> and unzip it
 4. change the attributes of executable files: chmod 755 *.sh<BR>
 5. Run the installation script ./Install_Varia.sh. This will install all the needed packages.<BR>
 
