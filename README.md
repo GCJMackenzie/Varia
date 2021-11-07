@@ -59,7 +59,7 @@ We tested Varia on a linux and Mac (10.13) enviroment.
 
 Varia is run in a Linux environment. To run module 1, Varia requires the following tools be installed and be included in the user’s path: (The installation script will ask permission to try and install circos and mcl using conda if they are not found on the users path.)<BR> 
 -mcl v12-135: https://micans.org/mcl/<BR>
--megablast + formatdb v2.2.26: https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download - on a ubuntu system it can be installed easily with:<BR>
+-megablast + formatdb v2.2.26: https://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/ - on a ubuntu system it can be installed easily with:<BR>
   apt install ncbi-blast+-legacy<BR>
 -samtools v1.7: http://samtools.sourceforge.net/<BR>
 -Vsearch 2.14.2 <BR>
