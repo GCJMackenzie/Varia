@@ -2,7 +2,7 @@
 
 Varia is a tool to predict the full sequences of genes from 150-200 base pair sequences (like PCR fragments). We applied and optimised it to run on the <i>var</i> gene familly and using DBL domains, especially the DBLa domain. It is composed of two modules Varia VIP and Varia GEM.
 
-To install Varia you can download a pre-compiled virtual machine or install it from scratch (you also need to then download the databases)
+To install Varia you can download a pre-compiled virtual machine (VM) or install it from scratch (you also need to then download the databases). <b>We would encourage user with limited experience in Linux to use the VM!</b>
 
 ## Testing
 
