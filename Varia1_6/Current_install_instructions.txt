@@ -1,34 +1,44 @@
-Varia comes with a script used to help install Varia, run Install_Varia.sh from the Varia directory and it will check whether the tools necessary for Varia 
-are present in the users PATH. If it finds them, the path to them is reported. If it cannot find mcl or Circos, it will ask the user if they wish to 
-install them using conda. For more commonly used tools such as Megablast or Samtools, it will not attempt to install them but will report them as missing 
-from the PATH. The script also asks the user to select a database file and domains annotation to be used by Varia. The files are soft linked to and the 
-links are stored in the vardb folder and domains folder respectively. This is to allow for a consistent file name to be used by Varia without modifying the 
-existing file. To change the database or domains file, remove the links and rerun the installation script. Finally, the script reports the path to the 
-Varia folder to be added to the user's PATH. 
+Installation:
+Virtual machine:
+Users without a bioinformatics setup can use our Linux virtual machine (https://q-r.to/ILRA_VM). You will need to install VirtualBox (https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html), set up Ubuntu x64 and mount the downloaded disc (.vdi). To install the virtual machine, please have look at 'VM.install.pdf' for further help. The username is 'bioinfo' and the password 'Glasgow2020'. The user has sudo rights.
 
-1. Download Varia
-2. unzip in directory you want to install Varia in
-3. enter Varia1_5 directory
-4. run Install_Varia.sh, this will:
-	check if Varia can find samtools either stating the path to the version it will use or telling the user to install samtools
-	check if Varia can find mcl, if it cant it will ask if the user wants to automatically install it with conda. If it can find mcl, then it will print the path to the version it will use
-	check if Varia can find circos, if it cant it will ask if the user wants to automatically install it with conda. If it can find circos, then it will print the path to the version it will use
-	check if Varia can find megablast, either stating the path to the version it will use or tell the user to intall megablast
-	check if Varia can find formatdb, either stating the path to the version it will use or tell the user to intall formatdb
-	check that there is a database registered in the correct format for megablast and will ask user which file to use if there isn't one.
-	check that there is a domain file registered and will ask the user to select one if there isn't
-	report the PATH to Varia1_5 that the user should add to their PATH
-	Generate a log file summarising the installation
+Git-hub installation:
+To install Varia, and download the current version:
 
-notes: 
--Varia.sh currently uses megablast, so ensuring megablast and formatdb are installed is essential. 
--The database and domains annotation included with Varia is an example database. The Pf3k database could not be included with Varia in part due to publication status and in part due to size of the database. It is recommended to download the Pf3K database of var genes and its accompanying domains annotation file for use with Varia.
+First, please install all the dependencies. Especially is the legacy version of blast is not installed, the installation will fail.
 
--Varia creates soft links to databases and domain files. This is so the names of the files are correct for the Varia scripts to use, whilst ensuring the original files are not changed and don't need to be copied.
+1. git clone https://github.com/GCJMackenzie/Varia.git
 
--To set the database for vardb, type yes when prompted then enter the exact path to the fasta file containing the database you wish to use. eg. /home/users/databases/Pf3k_var_genes.fasta.
--setting the domains file for Varia is handled the same as with setting the database and will require the path to their directory to be entered before their filename. eg. /home/user/domains/alternative_domains.fasta.
+2. Move to direcory "cd Varia/Varia1_6" Next you need to download two files with var genes data. You can obviously provide your own, see manual, but download:
 
--there is a known issue with Circos and certain versions of perl. Circos will work on version 5.22.0 and earlier. Some more recent versions may not install Circos corectly due to a perl module not being updated correctly. Varia can run without Circos but will not be able to make Circos plots. So it is recommended to use perl 5.22.0 if possible.
+3.(a) download vardb_domains.txt.gz from https://github.com/ThomasDOtto/varDB/tree/master/Datasets/Varia/ into the directory domains/ and unzip it
 
-5. Add the Varia1_5 directory to your PATH
+3.(b) download mega_var.fasta.gz from https://github.com/ThomasDOtto/varDB/tree/master/Datasets/Varia/ into the directory vardb/ and unzip it
+
+4.change the attributes of executable files: chmod 755 *.sh
+
+5.Run the installation script ./Install_Varia.sh. This will install all the needed packages.
+
+During installation you will be prompted to enter the names of the domains file and then the database file downloaded in steps 3(a) and 3(b) respectively. If using files from directories outside of Varia1_6/domains and Varia1_6/vardb respectively then full paths to files are required.
+
+The Varia_GEM domains file: Vardb_GEM_domains.txt file is automatically generated when a new domains file is specified, this may take some time with large domain files.
+
+6.Set the path as suggested in the last line of the varia installation script: PATH=$PATH:<...Varia/Varia1_6> export PATH
+
+7.Finally install vsearch: conda install -c bioconda vsearch conda install -c bioconda/label/cf201901 vsearch with Varia.sh VIP -h you should get information how to run the first module.
+
+We tested Varia on a linux and Mac (10.13) enviroment.
+
+Pre-requisites
+Varia is run in a Linux environment. To run module 1, Varia requires the following tools be installed and be included in the user’s path: (The installation script will ask permission to try and install circos and mcl using conda if they are not found on the users path.)
+-mcl v12-135: https://micans.org/mcl/
+-megablast + formatdb v2.2.26: https://ftp.ncbi.nlm.nih.gov/blast/executables/legacy.NOTSUPPORTED/2.2.26/ - on a ubuntu system it can be installed easily with:
+apt install ncbi-blast+-legacy
+-samtools v1.7: http://samtools.sourceforge.net/
+-Vsearch 2.14.2
+-circos v 0.69-6, perl v 5.022000: http://circos.ca/software/download/circos/
+If on Ubuntu, use: apt install circos for the installation. For the VM, we had to install some perl modules (SVG.pm), which we did over CPAN - apt install circos http://circos.ca/documentation/tutorials/configuration/perl_and_modules/
+
+in install the python-tk library sudo apt-get install python-tk
+
+The script Install_Varia.sh, has been included to help check the required tools are installed. Varia has two pipelines, the var identification and prediction, Varia_VIP, and the var gene expression analysis module, (2) Varia_GEM.
