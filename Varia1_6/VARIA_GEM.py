@@ -235,8 +235,6 @@ def main():
 					dbla_list = [item for sublist in top_hits for item in sublist]
 					if len(dbla_list) != 0: top_dbla = max(set(dbla_list), key = dbla_list.count)
 					else: dbla_list = ["None"]; top_dbla = "None"
-					print(top_dbla) 
-					print(dbla_list)
 					worksheet.write(row,column-218,str(top_dbla));worksheet.write(row,column-217,e_values[dbla_list.index(top_dbla)])							
 				#### Convert domains to appropriate Main-types and Subtypes, seperatoing into position list####
 				Ordering, raw_list, Double_ordering = domain_converter(domain_list)[0], domain_converter(domain_list)[1], domain_converter(domain_list)[2]
