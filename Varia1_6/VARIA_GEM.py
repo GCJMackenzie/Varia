@@ -175,7 +175,8 @@ def Interpreter(Ordering,raw_list,worksheet,row,file_list):
 		position_counter += 1
 	return column
 
-def main():	
+def main():
+	os.chdir('./GEM/')	
 	#### Cluster all sample fasta files found ####
 	Clustering()														
 	print("CLUSTERING COMPLETE")
