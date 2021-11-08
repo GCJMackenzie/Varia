@@ -137,7 +137,7 @@ then
 			echo "Creating Varia_GEM domains file"
 	
 	## code fix, correct generation of GEM domains
-	cat vardb_domains.txt | perl -e 'while(<STDIN>){ chomp; @ar=split(/\t/); $h{$ar[0]}.=$ar[3]."-"}; foreach my $k (keys %h ) { print "$k\n$h{$k}\n"}'  > vardb_GEM_domains.txt
+	cat vardb_domains.txt | perl -e 'while(<STDIN>){ chomp; @ar=split(/\t/); $h{$ar[0]}.=$ar[3]."-"}; foreach my $k (keys %h ) { print "$k\t$h{$k}\n"}'  > vardb_GEM_domains.txt
 
 			VALID=true
 		fi
@@ -152,7 +152,7 @@ else
 	echo "vardb_domains.txt is in $HERE/domains, if you wish to use a different file as the domains file, delete vardb_domains.txt from $HERE/domains, then rerun the install script."
 	echo "vardb_domains.txt is in $HERE/domains, if you wish to use a different file as the domains file, delete vardb_domains.txt from $HERE/domains, then rerun the install script." >> $HERE/Varia_install_log.txt
 	## need to always generate the GEM damins	
-	cat vardb_domains.txt | perl -e 'while(<STDIN>){ chomp; @ar=split(/\t/); $h{$ar[0]}.=$ar[3]."-"}; foreach my $k (keys %h ) { print "$k\n$h{$k}\n"}'  > vardb_GEM_domains.txt
+	cat vardb_domains.txt | perl -e 'while(<STDIN>){ chomp; @ar=split(/\t/); $h{$ar[0]}.=$ar[3]."-"}; foreach my $k (keys %h ) { print "$k\t$h{$k}\n"}'  > vardb_GEM_domains.txt
 
 fi
 
