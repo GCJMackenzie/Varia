@@ -15,18 +15,16 @@ After the installation, to test the installation, go to the directory:<BR>
    
   <BR><BR>
     GEM: <BR>
-     mkdir GEM; cd GEM; # generate a directory <BR>
-     cp ../*fasta .       # copy fasta files of interest to directory<BR>
-     cd .. 		# Go back to Varia.sh directory 
+     mkdir GEM # generate a directory <BR>
+     cp *fasta GEM/       # copy fasta files of interest to directory<BR>
      Varia.sh GEM        # Will run GEM module using default parameters <BR>
-  # will start Varia<BR>
-   Read the instruction on screen where the results files are<BR>
+     Read the instruction on screen. The result files, including the xls file will be in the GEM / diretory. <BR>
    
 
 ## Installation
 
 ### Virtual machine
-Users without a bioinformatics setup can use our Linux virtual machine (https://q-r.to/ILRA_VM). You will need to install VirtualBox (https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html), set up Ubuntu x64 and mount the downloaded disc (.vdi). To install the virtual machine, please have look at 'VM.install.pdf' for further help. The username is 'bioinfo' and the password 'Glasgow2020'. The user has sudo rights. 
+Users without a bioinformatics setup can use our Linux virtual machine (https://tinyurl.com/VMVariaV1). You will need to install VirtualBox (https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html), set up Ubuntu x64 and mount the downloaded disc (.vdi). To install the virtual machine, please have look at 'VM.install.pdf' for further help. The username is 'bioinfo' and the password 'Glasgow2020'. The user has sudo rights. 
 
 ### Git-hub installation
 To install Varia, and download the current version:
