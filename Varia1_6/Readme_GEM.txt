@@ -1,6 +1,8 @@
 Use by running command:
 Varia.sh GEM [additional options]
 
+OBS: Create a directory named GEM in the current directory before running the GEM module and place all relevant fasta files within.
+
 Options:
 
 	-i Sets the input directory to be searched for fasta files by Varia_GEM. The default is launch directory (currently non-functional)

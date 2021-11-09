@@ -259,10 +259,13 @@ def main():
 		sum_row +=1
 		os.chdir("..")
 	workbook.close()
+	print("The resulting Excel file has been created in the GEM folder")
 
 if __name__ == "__main__":
-	main()
-
+	try:
+		main()
+	except Exception:
+		print(" Error: Please remember to create GEM folder and place all fasta files within")
 
 
 
