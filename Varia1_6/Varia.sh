@@ -327,7 +327,7 @@ if [ "$1" = "VIP" ]
 		
 		##if no hits to db were found the program notifies user and moves to next sample.
 		HITCHECK=true
-		FIRSTHIT=$(wc -l $NAME.blast | cut -d ' ' -f 1)
+		FIRSTHIT=$(wc -l $NAME.blast | awk '{ print $1 }' )
 		if [ $FIRSTHIT -eq 0 ]
 		then
 			echo "no hits found for $NAME in the database, moving to next sample."
@@ -347,7 +347,7 @@ if [ "$1" = "VIP" ]
 				
 			##checks that there are hits remaining after the filter is applied.
 			##if not then moves on to the next sample.
-			FIRSTHIT=$(wc -l ${NAME}_genes.fasta | cut -d ' ' -f 1)
+			FIRSTHIT=$(wc -l ${NAME}_genes.fasta | awk '{ print $1 }' )
 			if [ $FIRSTHIT -eq 0 ]
 			then
 				echo "no hits found for $NAME in the database, that met the length and identity cutoff moving to next sample."
