@@ -24,7 +24,9 @@ After the installation, to test the installation, go to the directory:<BR>
 ## Installation
 
 ### Virtual machine
-Users without a bioinformatics setup can use our Linux virtual machine (https://tinyurl.com/VMVariaV1). You will need to install VirtualBox (https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html), set up Ubuntu x64 and mount the downloaded disc (.vdi). To install the virtual machine, please have look at 'VM.install.pdf' for further help. The username is 'bioinfo' and the password 'Glasgow2020'. The user has sudo rights. 
+Users without a bioinformatics setup can use our Linux virtual machine (https://tinyurl.com/VMVariaV1). You will need to install VirtualBox (https://www.oracle.com/virtualization/technologies/vm/downloads/virtualbox-downloads.html), set up Ubuntu x64 and mount the downloaded disc (.vdi). To install the virtual machine, please have look at 'VM.install.pdf' for further help. The username is 'bioinfo' and the password 'Glasgow2020'. The user has sudo rights. <BR>
+Some Mac users might have problems installing the VM or Virtual Box. Normally, by googling the mistake, the problems can be overcome. Often the issue is the graph acceleration settings and must be changed. <BR>Note: At the moment, there is no support for the M1 process of a Mac for Virtual Box and Linux machines.
+	  
 
 ### Git-hub installation
 To install Varia, and download the current version:
