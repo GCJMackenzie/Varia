@@ -4,6 +4,8 @@ Varia is a tool to predict the full sequences of genes from 150-200 base pair se
 
 To install Varia you can download a pre-compiled virtual machine (VM) or install it from scratch (you also need to then download the databases). <b>We would encourage user with limited experience in Linux to use the VM!</b>
 
+Varia was developed for Linux. Some parts may compile easily on a Mac (like the Varia_GEM module), we support the use of Varia for Windows and Apple Macintosh reader to the Virtual box/Virtual machine solution.
+
 ## Testing
 
 After the installation, to test the installation, go to the directory:<BR>
@@ -29,7 +31,7 @@ Some Mac users might have problems installing the VM or Virtual Box. Normally, b
 	  
 
 ### Git-hub installation
-To install Varia, and download the current version:
+To install Varia on a Linux system, download the current version:
 
 First, please install all the dependencies. Especially is the legacy version of blast is not installed, the installation will fail. 
 
